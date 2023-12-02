@@ -1,0 +1,15 @@
+@echo off
+
+setlocal enabledelayedexpansion
+
+set "target_port=2000"
+
+echo Closing connections on port !target_port!
+
+for /f "tokens=2 delims=," %%a in ('netstat -aon ^| findstr LISTENING ^| findstr !target_port!') do (
+    set "pid=%%a"
+    echo Terminating process on port !target_port! (PID: !pid!)
+    taskkill /F /PID !pid!
+)
+
+echo Done
