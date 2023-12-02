@@ -113,7 +113,7 @@ class RoarCompetitionSolution:
         print(dist)
         print(self.waypoint_queue_braking[0])
         if distance(waypoint_to_follow.location,self.waypoint_queue_braking[0])<=7:
-            print("HEREEHEHE[------------------------------------------------------------------------------------------------------------------------------------]")
+            print("HERE------------------------------------------------------------------------------------------------------------------------------------]")
             self.brake_ctr=int(self.waypoint_queue_braking[0][3])
             self.waypoint_queue_braking.pop(0)
 
